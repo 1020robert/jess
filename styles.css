@@ -1,6 +1,6 @@
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #fff0f5;
+  font-family: 'Open Sans', sans-serif;
+  background: #fff0f5;
   margin: 0;
   padding: 40px 20px;
   text-align: center;
@@ -11,35 +11,52 @@ body {
   margin: auto;
 }
 
-h1 {
-  font-size: 2em;
+.title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3em;
   color: #d6336c;
   margin-bottom: 30px;
 }
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
   padding: 10px;
+  animation: fadeIn 1s ease-out;
 }
 
 .gallery-grid img {
   width: 100%;
   height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery-grid img:hover {
   transform: scale(1.05);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25);
 }
 
-a {
+.back-button {
   display: inline-block;
   margin-top: 40px;
-  color: #d6336c;
-  font-weight: bold;
+  padding: 12px 24px;
+  font-size: 1rem;
+  background-color: #d6336c;
+  color: white;
   text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #a61e4d;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
